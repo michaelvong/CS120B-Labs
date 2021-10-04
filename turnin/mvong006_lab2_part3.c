@@ -36,7 +36,7 @@ int main(void) {
 		PORTC = 0x01;
 	}
 	else if (tmpA = 0x0F){
-		PORTC = 0x80
+		PORTC = 0x80;
 	}
 	else{
 		PORTC = 0x80;
