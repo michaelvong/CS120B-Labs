@@ -49,7 +49,7 @@ int main(void) {
 	}
 	else{
 		if((tmpC - tmpA) > 0x50){
-			tmpE = 0x0
+			tmpE = 0x0;
 		}
 	}
 
