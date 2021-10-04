@@ -35,7 +35,7 @@ int main(void) {
 		PORTC = 0x01;
 	}
 	else{
-		PORTC = 0x80;
+		PORTC = 0x00;
 	}
 
 
