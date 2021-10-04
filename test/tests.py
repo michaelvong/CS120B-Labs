@@ -15,17 +15,17 @@
 # that they are not ran in isolation but in the order shown and the state of the device is not reset or 
 # altered in between executions (unless preconditions are used).
 
-tests = [ {'description': 'PINA: 0x00 => PORTB: 0x02',
-    'steps': [ {'inputs': [('PINA',0x00)], 'iterations': 5 } ],
-    'expected': [('PORTB',0x00)],
+tests = [ {'description': 'PINA: 0x05 => PORTB: 0x02',
+    'steps': [ {'inputs': [('PINA',0x05)], 'iterations': 5 } ],
+    'expected': [('PORTC',0x02)],
     },
     {'description': 'PINA: 0x02 => PORTB: 0x02',
     'steps': [ {'inputs': [('PINA',0x02)], 'iterations': 5 } ],
-    'expected': [('PORTB',0x00)],
+    'expected': [('PORTC',0x03)],
     },
-    {'description': 'PINA: 0x01 => PORTB: 0x01',
-    'steps': [ {'inputs': [('PINA',0x01)], 'iterations': 5 } ],
-    'expected': [('PORTB',0x01)],
+    {'description': 'PINA: 0x07 => PORTB: 0x01',
+    'steps': [ {'inputs': [('PINA',0x07)], 'iterations': 5 } ],
+    'expected': [('PORTC',0x01)],
     },
     ]
 
