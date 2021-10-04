@@ -14,11 +14,22 @@
 
 int main(void) {
     /* Insert DDR and PORT initializations */
+    DDRA = 0x00;
+    PORTA = 0xFF;
     DDRB = 0xFF;
     PORTB = 0x00;
+    unsigned char tmpB = 0x00;
+    unsigned char tmpA = 0x00;
     /* Insert your solution below */
     while (1) {
-	PORTB = 0x0F;
+	tmpA = PINA & 0x01;
+	if (tmpA == 0x01){
+		tmpB = (tmpB & 0xFC) | 0x01;
+	}
+	else{
+		tmpB = (tmpB & 0xFC) | 0x02;
+	}
+	PORTB = tmpB;
     }
-    return 1;
+    return 0;
 }
