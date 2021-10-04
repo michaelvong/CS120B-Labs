@@ -23,7 +23,7 @@ int main(void) {
     /* Insert your solution below */
     while (1) {
 	tmpA = PINA & 0x01;
-	tmpB = PINB & 0x02;
+	tmpB = PINA & 0x02;
 
 	if (tmpA == 0x01 && tmpB == 0x00){
 		PORTB = 0x01;
