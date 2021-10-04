@@ -33,7 +33,10 @@ int main(void) {
 	else if (tmpA == 0x03 || tmpA == 0x05 || tmpA == 0x06 || tmpA == 0x09 || tmpA == 0x0A || tmpA == 0x0C){
 		PORTC = 0x02;
 	}
-	else if (tmpA = 0x07 || tmpA == 0x0B || tmpA == 0x0D || tmpA == 0x0E){
+	else if (tmpA == 0x4F){
+		PORTC = 0x80;
+	}	
+	else if (tmpA == 0x07 || tmpA == 0x0B || tmpA == 0x0D || tmpA == 0x0E){
 		PORTC = 0x01;
 	}
 	else if (tmpA = 0x0F){
