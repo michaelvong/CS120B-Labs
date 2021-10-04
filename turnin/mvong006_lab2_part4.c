@@ -39,28 +39,19 @@ int main(void) {
 	
 	totalWeight = tmpA + tmpB + tmpC;
 	if (totalWeight > 0x008C){
-		tmpD = 0x01;
+		tmpD = tmpD +  0x01;
 	}
 	else{
 		tmpD = 0x00;
 	}
 
 
-	if (tmpA > tmpC){
-		if((tmpA -tmpC) > 0x50){
-			tmpE = 0x02;
-		}
-	}
-	else{
-		if((tmpC - tmpA) > 0x50){
-			tmpE = 0x02;
-		}
+	if ((tmpA - tmpC > 0x50) || ((tmpC - tmpA) > 0x50)){
+		tmpD = tmpD + 0x02;
 	}
 
-	updateD = (totalWeight & 0x00FC);
 	updateD = updateD << 2;
-	updateD = updateD | tmpD;
-	updateD = updateD | tmpE;
+	updateD = updateD + tmpD;
 	PORTD = updateD;
     }
     return 0;
