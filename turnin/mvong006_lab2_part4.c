@@ -57,7 +57,7 @@ int main(void) {
 		}
 	}
 
-	updateD = (totalWeight & 0x00FC) | tmpD | tmpE;
+	updateD = (totalWeight & 0x00FF) | tmpD | tmpE;
 	PORTD = updateD;
     }
     return 0;
