@@ -36,8 +36,10 @@ int main(void) {
 	tmpC = PINC;
 	tmpD = 0x00;
 	tmpE = 0x00;
-	
+
 	totalWeight = tmpA + tmpB + tmpC;
+	updateD = totalWeight / 15;
+	updateD = updateD << 2;
 	if (totalWeight > 0x008C){
 		tmpD = tmpD +  0x01;
 	}
@@ -50,7 +52,7 @@ int main(void) {
 		tmpD = tmpD + 0x02;
 	}
 
-	updateD = updateD << 2;
+
 	updateD = updateD + tmpD;
 	PORTD = updateD;
     }
