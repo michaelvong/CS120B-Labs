@@ -1,5 +1,16 @@
 # Test file for "Lab2_introToAVR"
 
+echo ======================================================\n
+
+
+test "(100)PINA: 0x64, (80)PINB: 0x50, (10)PINC: 0x0A => (190)PORTD: 0xBF (101111 11)"
+setPINA 0x64
+setPINB 0x50
+setPINC 0x0A
+continue 5
+expectPORTD 0xBF
+checkResult
+
 
 # commands.gdb provides the following functions for ease:
 #   test "<message>"
