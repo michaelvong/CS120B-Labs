@@ -35,6 +35,9 @@ int main(void) {
 	else if (tmpA = 0x07 || tmpA == 0x0B || tmpA == 0x0D || tmpA == 0x0E){
 		PORTC = 0x01;
 	}
+	else if (tmpA = 0x0F){
+		PORTC = 0x80
+	}
 	else{
 		PORTC = 0x80;
 	}
