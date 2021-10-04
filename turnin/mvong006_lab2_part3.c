@@ -23,7 +23,7 @@ int main(void) {
     /* Insert your solution below */
     while (1) {
 	tmpA = PINA;
-	if (tmpA == 0x00){
+	if (tmpA == 0x00 || tmpA == 0x80){
 		PORTC = 0x04;
 	}
 	else if (tmpA == 0x01 || tmpA == 0x02 || tmpA == 0x04 || tmpA == 0x08){
