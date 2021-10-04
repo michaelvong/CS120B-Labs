@@ -58,6 +58,7 @@ int main(void) {
 	}
 
 	updateD = (totalWeight & 0x00FC);
+	updateD = updateD << 2;
 	updateD = updateD | tmpD;
 	updateD = updateD | tmpE;
 	PORTD = updateD;
