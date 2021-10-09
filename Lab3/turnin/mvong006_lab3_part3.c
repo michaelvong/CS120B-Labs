@@ -47,7 +47,7 @@ int main(void) {
 	if (((tmpA & 0x0D) == 0x0D) || ((tmpA & 0x0E) == 0x0E) || ((tmpA & 0x0F) == 0x0F)){
 		tmpC = 0x3F; //tmpC = 00111111
 	}
-	if (tmpA & 0x00 == 0x00) {
+	if (tmpA == 0x00) {
 		tmpC = 0x40; //tmpC = 01000000
 	}
 
