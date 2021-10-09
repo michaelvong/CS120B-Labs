@@ -1,7 +1,7 @@
 /*	Author: Michael Vong
  *  Partner(s) Name: none
  *	Lab Section:
- *	Assignment: Lab 3  Exercise 1
+ *	Assignment: Lab 3  Exercise 2
  *	Exercise Description: [optional - include for your own benefit]
  *
  *	I acknowledge all content contained herein, excluding template or example
@@ -28,7 +28,7 @@ int main(void) {
     while (1) {
 	tmpA = PINA;
 	tmpC = 0x00;
-
+	tmpA = tmpA & 0x0F;
 	if (((tmpA & 0x01) == 0x01) || ((tmpA & 0x02) == 0x02)){
 		tmpC = 0x60; // tmpC = 01100000
 	}
