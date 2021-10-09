@@ -51,7 +51,7 @@ int main(void) {
 		tmpC = 0x40; //tmpC = 01000000
 	}
 
-	if (((tempA & 0x30) == 0x30) && (tempA & 0x40) != 0x40) {
+	if (((tmpA & 0x30) == 0x30) && (tmpA & 0x40) != 0x40) {
 		tmpC = tmpC | 0x80;
 	}
 
