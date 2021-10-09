@@ -1,0 +1,11 @@
+Breakpoint 1 at 0x158: file source/main.c, line 30.
+Note: automatically using hardware breakpoints for read-only addresses.
+======================================================
+"(100)PINA: 0x64, (80)PINB: 0x50, (10)PINC: 0x0A => (190)PORTD: 0xBF (101111 11)"...
+	Expected 0xBF 
+	PORTD '0x80002b:	0x6e
+======================================================
+Running all tests..."
+
+"PINA: 0x00, PINB: 0x00 => PORTC: 0"...======================================================
+Remote doesn't know how to detach
