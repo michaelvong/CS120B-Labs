@@ -61,7 +61,7 @@ void TickFct(){
 		case init:
 			break;
 		case set:
-			if ((PINA & 0x03 == 0x03)) {
+			if ((PINA & 0x03) == 0x03) {
 				PORTC = 0;
 			}
 			break;
