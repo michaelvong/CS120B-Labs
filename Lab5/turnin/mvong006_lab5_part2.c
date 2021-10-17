@@ -21,10 +21,10 @@ void TickFct(){
 			state = set;
 			break;
 		case set:
-			if ((PINA & 0x01) == 0x01){
+			if ((~PINA & 0x01) == 0x01){
 				state = plus;
 			}
-			else if ((PINA & 0x02) == 0x02){
+			else if ((~PINA & 0x02) == 0x02){
 				state = minus;
 			}
 			else {
@@ -38,7 +38,7 @@ void TickFct(){
 			state = check2;
 			break;
 		case check:
-			if ((PINA & 0x01) == 0x01){
+			if ((~PINA & 0x01) == 0x01){
 				state = check;
 			}
 			else {
@@ -46,7 +46,7 @@ void TickFct(){
 			}
 			break;
 		case check2:
-			if ((PINA & 0x02) == 0x02){
+			if ((~PINA & 0x02) == 0x02){
 				state = check2;
 			}
 			else {
@@ -61,7 +61,7 @@ void TickFct(){
 		case init:
 			break;
 		case set:
-			if ((PINA & 0x03) == 0x03) {
+			if ((~PINA & 0x03) == 0x03) {
 				PORTC = 0;
 			}
 			break;
@@ -76,12 +76,12 @@ void TickFct(){
 			}
 			break;
 		case check:
-			if ((PINA & 0x03) == 0x03) {
+			if ((~PINA & 0x03) == 0x03) {
 				PORTC = 0;
 			}
 			break;
 		case check2:
-			if ((PINA & 0x03) == 0x03){
+			if ((~PINA & 0x03) == 0x03){
 				PORTC = 0;
 			}
 			break;
