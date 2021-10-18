@@ -1,9 +1,9 @@
 /*	Author: Michael Vong
  *  Partner(s) Name: none
  *	Lab Section:
- *	Assignment: Lab 5  Exercise 1
+ *	Assignment: Lab 5  Exercise 3
  *	Exercise Description: [optional - include for your own benefit]
- *
+ *      Video Demo: I was not able to get a demo due to missing resources. 
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.
  */
