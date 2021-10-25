@@ -1,9 +1,9 @@
 /*	Author: Michael Vong
  *  Partner(s) Name: none
  *	Lab Section:
- *	Assignment: Lab 6  Exercise 1
+ *	Assignment: Lab 6  Exercise 2
  *	Exercise Description: [optional - include for your own benefit]
- *	Demo: https://drive.google.com/file/d/1fDdGjcwZtEDjrIvi-IP_l3VddsnuSMZE/view?usp=sharing 
+ *      Demo: https://drive.google.com/file/d/1yZYS1Goy7NmwLSlzxEnrwHnBKqtSqMsI/view?usp=sharing
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.
  */
@@ -13,7 +13,7 @@
 #include <avr/interrupt.h>
 #endif
 
-enum States{start, led0, led1, led2} state;
+enum States{start, led0, led1, led2, press, release, reset} state;
 
 volatile unsigned char TimerFlag = 0;
 unsigned long _avr_timer_M = 1;
@@ -52,17 +52,56 @@ void TimerSet (unsigned long M) {
 void TickFct(){
 	switch(state){
 		case start:
-			state = led0; //first led
+			if ((~PINA & 0x01) == 0x01){
+				state = press;
+			}
+			else{
+			state = led0;
+			}	//first led
 			break;
 		case led0:
-			state = led1; //second led
+			if ((~PINA & 0x01) == 0x01){
+				state = press;
+			}
+			else{state=led1;}	//second led
 			break;
 		case led1:
-			state = led2; //third led
+			if ((~PINA & 0x01) == 0x01){
+				state = press;
+			}
+			else{
+				state = led2;
+			}	//third led
 			break;
 		case led2:
-			state = led0; //back to first
+			if ((~PINA & 0x01) == 0x01){
+				state = press;
+			}	//back to first
+			else {
+				state = led0;
+			}
 			break;
+		case press:
+			if ((~PINA & 0x01) == 0x01){
+					state = release;
+			}
+			else{
+				state = press;
+			}
+		case release:
+			if ((~PINA & 0x01) == 0x01){
+				state = reset;
+			}
+			else{
+				state = release;
+			}
+		case reset:
+			if ((~PINA & 0x01) == 0x01){
+				state = reset;
+			}
+			else{
+			state = led0;
+			}
 		default:
 			state = start;
 			break;
@@ -80,6 +119,10 @@ void TickFct(){
 		case led2:
 			PORTB = 0xFB; //light3
 			break;
+		case press:
+		case release:
+		case reset:
+			break;
 		default:
 			PORTB = 0xFF;
 			break;
@@ -91,12 +134,15 @@ int main(void) {
     /* Insert DDR and PORT initializations */
     DDRB = 0xFF;
     PORTB = 0x00;
+    DDRA = 0x00;
+    PORTA = 0xFF;
 	    
-    TimerSet(100);
+    TimerSet(75);
     TimerOn();
     /* Insert your solution below */
     while (1) {
 	TickFct();
+	
 	while(!TimerFlag) {};
 	TimerFlag = 0;
     }
