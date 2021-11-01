@@ -1,9 +1,9 @@
 /*	Author: Michael Vong
  *  Partner(s) Name: none
  *	Lab Section:
- *	Assignment: Lab 8  Exercise 1
+ *	Assignment: Lab 8  Exercise 2
  *	Exercise Description: [optional - include for your own benefit]
- *      Demo:
+ *      Demo: https://drive.google.com/file/d/1fPpXnjWQMHl7CJRrXwRz-J6KiSCAh64i/view?usp=sharing
  *	I acknowledge all content contained herein, excluding template or example
  *	code, is my own original work.
  */
