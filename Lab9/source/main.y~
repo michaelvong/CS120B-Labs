@@ -1,7 +1,7 @@
 /*	Author: Michael Vong
  *  Partner(s) Name: none
  *	Lab Section:
- *	Assignment: Lab 9  Exercise 2
+ *	Assignment: Lab 9  Exercise 1
  *	Exercise Description: [optional - include for your own benefit]
  *      Demo:
  *	I acknowledge all content contained herein, excluding template or example
@@ -91,7 +91,7 @@ void Tick(){
 			break;
 		case add:
 			if (freq < 0x07) {
-				freq = freq + 1;
+				freq++;
 			}
 			if (pwr == 0x01){
 				set_PWM(frequency[freq]);
@@ -99,7 +99,7 @@ void Tick(){
 			break;
 		case sub:
 			if (freq > 0x00) {
-				freq = freq - 1;
+				freq--;
 			}
 			if (pwr == 0x01) {
 				set_PWM(frequency[freq]);
@@ -108,11 +108,10 @@ void Tick(){
 		case power:
 			if (pwr == 0){
 				set_PWM(frequency[freq]);
-				pwr = 0x01;
 			}
 			else if (pwr == 1){
 				set_PWM(0);
-				pwr = 0x00;
+				power = 0x00;
 			}
 			break;
 		case release:
@@ -124,7 +123,7 @@ void Tick(){
 
 int main(void) {
     /* Insert DDR and PORT initializations */
-    DDRB = 0xFF;
+    DDRB = 0x40;
     PORTB = 0x00;
     DDRA = 0x00;
     PORTA = 0xFF;
